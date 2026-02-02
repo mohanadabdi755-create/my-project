@@ -1,0 +1,57 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+
+  /* Background full screen */
+  background-image: url("fs.webp"); /* bedel sawirkaaga */
+  background-size: cover;      /* sawirka buuxa ugu fidin */
+  background-position: center; /* sawirka dhexda ka dhig */
+  background-repeat: no-repeat;
+  height: 1000px;               /* buuxa viewport-ka */
+}
+
+.copyright{
+  color: rgb(246, 246, 242);        /* beddel midabka */
+}
+
+
+/* LOGIN */
+.login-box{
+  width:320px;margin:120px auto;background:#1e90ff;padding:20px;border-radius:8px;color:white;
+}
+input,select,button{width:100%;padding:4px;margin:6px 0;border:none;border-radius:8px}
+button{background:#0b5ed7;color:white;cursor:pointer}
+.show-pass{font-size:13px}
+.error{color:rgb(52, 93, 110);text-align:center}
+.hint{font-size:12px;color:rgb(225, 240, 26)}
+
+#app{display:none}
+
+/* HEADER + NAV */
+header{background:#0b5ed7;color:white;padding:10px;text-align:center}
+.nav{display:flex;background:#1e90ff}
+.nav-item{flex:1;padding:10px;text-align:center;color:white;cursor:pointer;transition:0.3s}
+.nav-item.active,.nav-item:hover{background:yellow;color:rgb(206, 8, 8)}
+
+/* CONTENT */
+.container{padding:20px}
+.section{background:rgb(11, 235, 153);padding:15px;margin-bottom:15px}
+.page{display:none}
+.page.active{display:block;animation:fade 0.4s}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1}}
+
+/* FORM BOX */
+.form-box{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.field{background:lab(81.92% -49.79 16.54);padding:8px;border-radius:6px}
+.field label{font-size:12px;display:block}
+
+/* TABLE */
+table{width:100%;border-collapse:collapse}
+th,td{border:1px solid #ccc;padding:5px;text-align:center}
+
+/* LOGOUT BUTTON */
+#logoutBtn{
+  background:#ff4d4d;color:white;padding:0;border:none;border-radius:4px;cursor:pointer;margin-top:0;
+}

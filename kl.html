@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Stadium Booking System</title>
+<link rel="stylesheet" href="kl.css">
+</head>
+<body>
+  
+
+<!-- LOGIN -->
+<div id="loginBox" class="login-box">
+  <h2>Admin Login</h2>
+  <input id="username" placeholder="Username">
+  <input id="password" type="password" placeholder="Password">
+  <label class="show-pass">
+    <input type="checkbox" onclick="togglePassword()"> Show Password
+  </label>
+  <button onclick="login()">Login</button>
+  <div id="loginMsg" class="error"></div>
+  <div class="hint">Admin: <b>admin</b> | Pass: <b>admin2025</b></div>
+</div>
+
+<!-- APP -->
+<div id="app">
+
+  <header>
+    <h3>Stadium Booking</h3>
+    <h5><button id="logoutBtn" onclick="logout()">Logout</button>
+</h5>
+  </header>
+
+  <nav class="nav">
+    <div class="nav-item active" onclick="showPage('home',this)">Home</div>
+    <div class="nav-item" onclick="showPage('booking',this)">Booking</div>
+    <div class="nav-item" onclick="showPage('about',this)">About</div>
+    <div class="nav-item" onclick="showPage('contact',this)">Contact</div>
+  </nav>
+
+  <div class="container">
+
+    <!-- HOME -->
+    <div id="home" class="page active section">
+      <h2>Stadium Booking System</h2>
+      <h3>Welcome to Garaad Stadium</h3>
+      <p>
+        Garaad Stadium waa garoon casri ah oo loogu talagalay kubadda cagta,
+        laguna kireeyo saacado kala duwan.
+      </p>
+    </div>
+
+    <!-- BOOKING -->
+    <div id="booking" class="page section">
+      <h3>New Booking</h3>
+
+      <div class="form-box">
+        <div class="field"><label>Client Name</label><input id="client"></div>
+        <div class="field"><label>Phone</label><input id="phone"></div>
+        <div class="field">
+          <label>Day</label>
+          <select id="day">
+            <option value="">Select Day</option>
+            <option>Saturday</option><option>Sunday</option><option>Monday</option>
+            <option>Tuesday</option><option>Wednesday</option><option>Thursday</option>
+            <option>Friday</option>
+          </select>
+        </div>
+        <div class="field"><label>Date</label><input id="date" type="date"></div>
+        <div class="field"><label>Time</label><input id="time" type="time"></div>
+        <div class="field"><label>Hours</label><input id="hours" type="number" oninput="calcPrice()"></div>
+        <div class="field"><label>Price ($)</label><input id="price" readonly></div>
+      </div>
+
+      <button onclick="addBooking()">Save Booking</button>
+
+      <table>
+        <thead>
+          <tr>
+            <th>#</th><th>Client</th><th>Phone</th><th>Day</th>
+            <th>Date</th><th>Time</th><th>Hours</th><th>Price</th><th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="bookingList"></tbody>
+      </table>
+    </div>
+
+    <!-- ABOUT -->
+    <div id="about" class="page section">
+      <h3>About</h3>
+      <p>Modern Stadium Management System</p>
+      <p>Garaad Stadium waxaa loo aas-aasay si loo siiyo dhalinyarada
+
+      iyo ciyaartoyda garoon tayo leh, ammaan ah, kaabaya baahida isboortiga,
+      
+      waxaad kaloo kaheleysaa dhammaan wax yaabaha quseeya isboortiska.</p>
+    </div>
+
+    <!-- CONTACT -->
+    <div id="contact" class="page section">
+      <h3>Contact Us</h3>
+      <p>📍 Location: Banaadir-Mogadisho, Somalia</p>
+      <p>📍address: Hodan-Digfeer </p>
+      <p>📞 Phone: +252 611893333</p>
+      <p>📧 Email: Garaad@gmail.com</p>
+    </div>
+
+  </div>
+</div>
+
+
+<footer class="copyright">
+  © right <span id="year"></span> Mo Beereed All Rights Reserved.
+</footer>
+
+<script src="copyright.js"></script>
+
+<script src="kl.js"></script>
+</body>
+</html>
